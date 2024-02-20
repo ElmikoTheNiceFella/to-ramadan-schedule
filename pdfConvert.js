@@ -67,6 +67,26 @@ Times: 2:00PM to 3:00PM
 Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
 `
+function timingToHour(timing) {
+    let timings = timing.split(" to ")
+    timings = timings.map(v => v.padStart(7, '0'))
+
+    let timing1;
+    let timing2;
+
+    timings.forEach((timing, i) => {
+        let hours = +timing.substring(0, 2)
+        let minutes = (+timing.substring(3, 5)) / 60
+        if (timing.substring(5,7) === "PM" && timing.substring(0,2) !== "12") {
+            hours += 12
+        }
+
+        i == 0 ? timing1 = hours + minutes : timing2 = hours + minutes;
+    })
+
+    return timing2 - timing1
+}
+
 function analyzeData(data) {
     const lines = data.split("\n")
     
@@ -93,9 +113,13 @@ function analyzeData(data) {
         }
     }
 
-    
+
 
     return finalStuff
 }
 
-console.log(analyzeData(data))
+// console.log(analyzeData(data))
+console.log(timingToHour("9:30AM to 11:00AM")) // 1.5
+console.log(timingToHour("8:00AM to 9:30AM")) // 1.5
+console.log(timingToHour("2:00PM to 5:00PM")) // 3
+console.log(timingToHour("9:30AM to 12:30PM")) // 3
