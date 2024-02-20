@@ -1,1 +1,1 @@
-console.log(item.text)
+let finalResult = {}

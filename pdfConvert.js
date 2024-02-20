@@ -1,22 +1,32 @@
 // Getting data
 import { PdfReader } from "pdfreader";
 
-function hel() {
+function hel(schedule) {
     return new Promise((resolve, reject) => {
         let arr = [];
-        new PdfReader().parseFileItems("Test1.pdf", function(err, item) {
+        new PdfReader().parseFileItems(schedule, function(err, item) {
             if (err) {
-                console.error("error:", err);
                 reject(err);
             } else if (!item) {
-                console.warn("end of file");
                 resolve(arr);
             } else if (item.text) {
-                console.log(item);
                 arr.push(item);
             }
         });
     });
 }
 
-hel().then(result => console.log(result)).catch(error => console.error(error));
+let data = await hel("Test4.pdf").then(result => result).catch(error => console.error(error));
+let finalResult = {}
+
+for(let i = 0; i < data.length; i++) {
+    if (finalResult[data[i].y]) {
+        finalResult[data[i].y] = [...finalResult[data[i].y], data[i].text]
+    } else {
+        finalResult[data[i].y] = [data[i].text]
+    }
+}
+
+let cleanedData = []
+
+console.log(finalResult)
