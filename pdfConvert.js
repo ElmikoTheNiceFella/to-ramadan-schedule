@@ -140,6 +140,10 @@ function timingToRamdan(timing) {
     return `${start} to ${end}`
 }
 
+/* ---------------------- */
+/* Main analysis function */
+/* ---------------------- */
+
 function analyzeData(data) {
     const lines = data.split("\n")
     
@@ -174,6 +178,3 @@ function analyzeData(data) {
 
     return finalStuff
 }
-
-console.log(analyzeData(data))
-console.log(timingToRamdan('8:00AM to 9:30AM'))
