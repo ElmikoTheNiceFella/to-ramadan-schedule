@@ -144,7 +144,7 @@ function timingToRamdan(timing) {
 /* Main analysis function */
 /* ---------------------- */
 
-function analyzeData(data) {
+export function analyzeData(data) {
     const lines = data.split("\n")
     
     let finalStuff = []

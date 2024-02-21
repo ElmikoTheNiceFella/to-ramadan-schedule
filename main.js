@@ -1,7 +1,11 @@
-import { PdfReader } from "pdfreader";
+import { analyzeData } from "./scheduleConverter";
 
-new PdfReader().parseFileItems("/Test1.pdf", (err, item) => {
-  if (err) console.error("error:", err);
-  else if (!item) console.warn("end of file");
-  else if (item.text) console.log(item.text);
-});
+const userInput = document.getElementById("userInput")
+
+const data = userInput.value
+
+const displayElement = document.getElementById("display")
+
+function displaySchedule() {
+  displayElement.innerHTML = analyzeData(data)
+}
