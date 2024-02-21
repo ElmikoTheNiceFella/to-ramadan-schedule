@@ -1,5 +1,6 @@
 import { ramadanStarts, ramadanTimings } from "./constants.js";
 
+// Demo data
 const data = `
 2/20/24, 6:43 AM View My Classes
 https://campus.udst.edu.qa/psc/csqaprd9_21/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_MD_SP_FL.GBL?Action=U&MD=Y&GMenu=SSR_STUD… 1/2
@@ -70,53 +71,73 @@ Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
 `
 
-function timingToNum(timing) {
-    let hours = +timing.substring(0, 2)
-    let minutes = (+timing.substring(3, 5)) / 60
-    if (timing.substring(5,7) === "PM" && timing.substring(0,2) !== "12") {
-        hours += 12
+function addToTiming(timing, duration) {
+    // Get duration as hours and minutes
+    const durationHours = Math.floor(duration / 60)
+    const durationMinutes = duration % 60
+
+    // Get timing as hours and minutes
+    const timingHours = +timing.substring(0, 2)
+    const timingMinutes = +timing.substring(3, 5)
+
+    // Calculate hours
+    let hours = durationHours + timingHours
+
+    // Calculate Minutes
+    let minutes = durationMinutes + timingMinutes
+    if (minutes >= 60) {
+        hours++
+        minutes -= 60
     }
-    return [hours, minutes]
+
+    // Get Suffix
+    let suffix = hours >= 12 ? "PM" : "AM"
+
+    // Format hours if minutes exceeds 60
+    if (hours > 12) hours -= 12
+
+    // Format hours and minutes
+    let endTiming = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + suffix
+
+    return endTiming
 }
 
-function numToTiming(timing) {
-    let prefix;
-
-    let minutes = timing % 1
-    let hours = Math.floor(timing)
-
-    if (hours > 11) {
-        prefix = "PM"
-        hours -= timing == 12 ? 0 : 12
-    } else { prefix = "AM" }
-
-    return `${hours}`.padStart(2, '0')+`:${minutes * 60}${prefix}`
-}
-
-function timingToRamadan(timing) {
-    // Seperate Timings
-    let timings = timing.split(" to ")
-    timings = timings.map(v => v.padStart(7, '0'))
-
-    // Initialize new timings
-    let timing1;
-    let timing2;
-
-    // Convert timing to a calculatable value
-    timings.forEach((timing, i) => {
-        let [hours, minutes] = timingToNum(timing)
-
-        i == 0 ? timing1 = hours + minutes : timing2 = hours + minutes;
-    })
-
-    // Get the starting hour and the class duration
-    let start = ramadanStarts[timings[0]]
-    let duration = ramadanTimings[(timing2 - timing1) * 60]
+function timingToNum(timing) {
+    let hours = +timing.substring(0, 2);
+    let minutes = +timing.substring(3, 5) / 60;
     
-    // Get the class ending time
-    let end = numToTiming(Math.floor(timingToNum(start).reduce((acc, curr) => acc + curr, 0)*10)/10 + duration)
+    if (timing.substring(5, 7) == "PM" && hours != 12) hours += 12
 
-    return [start, end]
+    return hours+minutes
+}
+
+/* ------------------------ */
+/* Main conversion function */
+/* ------------------------ */
+
+function timingToRamdan(timing) {
+    // Get timing start
+    let timings = timing.split(" to ") // 8:00AM to 11:00AM => ['8:00AM', '11:00AM']
+    timings = timings.map(v => v.padStart(7, '0')) // 8:00AM => 08:00AM & 11:00AM => 11:00AM
+    console.log("**DEBUG-START**")
+    console.log("timings", timings)
+
+    let start = ramadanStarts[timings[0]]
+    console.log("start", start)
+
+    // Calculate the duration
+    let duration = timingToNum(timings[1]) - timingToNum(timings[0])
+    console.log("duration", duration)
+
+    let ramadanDuration = ramadanTimings[duration*60]
+    console.log("ramadanDuration", ramadanDuration)
+
+    // Get timing end
+    let end = addToTiming(start, ramadanDuration)
+    console.log("end", end)
+
+    console.log("**DEBUG-END**")
+    return `${start} to ${end}`
 }
 
 function analyzeData(data) {
@@ -126,7 +147,7 @@ function analyzeData(data) {
     
     let i = -1;
     for(let line of lines) {
-        console.log(line)
+        // console.log(line)
         let course = "";
         if (/([A-Z]{4}\s[0-9]{4})/.test(line)) {
             course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0]
@@ -137,7 +158,13 @@ function analyzeData(data) {
             if (line.includes("Days:") || line.includes("Times:")) {
                 if (finalStuff[i].timings) {
                     let timing = line.match(/(?<=:\s)(.*)/)[0]
-                    finalStuff[i].timings.push(timing)
+
+                    if (/^T|^W|^M|S/.test(timing)) {
+                        finalStuff[i].timings.push(timing)
+                    } else {
+                        finalStuff[i].timings.push(timingToRamdan(timing))
+                    }
+
                 }  else {
                     finalStuff[i].timings = [line.match(/(?<=:\s)(.*)/)[0]]
                 }
@@ -145,13 +172,8 @@ function analyzeData(data) {
         }
     }
 
-
-
     return finalStuff
 }
 
 console.log(analyzeData(data))
-console.log(timingToRamadan('8:00AM to 9:30AM'))
-console.log(timingToRamadan('9:30AM to 12:30PM'))
-console.log(timingToRamadan('2:00PM to 3:00PM'))
-console.log(timingToRamadan('9:30AM to 11:00AM'))
+console.log(timingToRamdan('8:00AM to 9:30AM'))
