@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div style={{
-      height: tutorial ? "100vh" :"auto",
+      height: tutorial ? "100dvh" :"auto",
       overflowY: "hidden"
     }} id="parent">
       {tutorial && <Steps exit={handleSteps} />}
