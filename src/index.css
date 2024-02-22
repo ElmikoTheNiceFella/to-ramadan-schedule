@@ -47,6 +47,7 @@ h1 {
   background-color: var(--text);
   padding: 20px;
   width: fit-content;
+  margin-bottom: 48px;
 }
 .day-container {
   width: 200px;
@@ -61,13 +62,27 @@ h1 {
   display: grid;
   width: 200px;
   place-content: center;
-  border: 2px solid var(--bg);
+  border: 2px solid var(--border);
+}
+.course.break {
+  background: var(--text);
+  color: var(--bg);
+  border: 2px solid var(--border);
+}
+.course.break > .course-timing {
+  font-weight: 700;
+  font-size: 18px;
+  padding-top: 10px;
+  text-align: center;
+  padding: 0px 20px;
+  font-style: italic;
+  color: var(--bg);
 }
 .course-name {
   color: var(--text);
   text-align: center;
 }
-.course-timing {
+.course:not(.break) > .course-timing {
   font-weight: 700;
   font-size: 18px;
   padding-top: 10px;

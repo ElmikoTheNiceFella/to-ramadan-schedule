@@ -148,6 +148,18 @@ function timingToRamdan(timing) {
     return `${start} to ${end}`
 }
 
+export function breakCalculator(time) {
+    let hours = Math.floor(time / 60)
+    let minutes = time % 60
+
+    if (hours == 0) {
+        return `${minutes} minutes break`
+    } else {
+        return `${hours} hours and ${minutes} minutes break`
+    }
+    
+}
+
 /* ------------------------ */
 /* Main conversion function */
 /* ------------------------ */
