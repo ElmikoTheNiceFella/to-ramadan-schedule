@@ -19,7 +19,7 @@
 textarea {
   all: unset;
   background-color: var(--text);
-  width: 50%;
+  width: min(70%, 700px);
   height: 200px;
   outline: 3px solid var(--bg);
 }
@@ -27,9 +27,9 @@ button {
   all: unset;
   background-color: var(--bg);
   color: var(--text);
-  height: 50px;
+  height: 70px;
   text-align: center;
-  width: 50%;
+  width: min(70%, 700px);
   margin-top: 24px;
   font-size: 24px;
   cursor: pointer;
@@ -40,8 +40,9 @@ button {
 }
 h1 {
   text-align: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 48px 0px;
+  width: 70%;
+  margin: auto;
 }
 .schedule {
   display: flex;

@@ -7,13 +7,13 @@ const Schedule = ({data}) => {
   return (
     <div className="schedule">
       {Object.keys(data).map(day => (
-        <div className="day-container">
+        <div key={day} className="day-container">
           {/* Days */}
           <h2 className="day">{day}</h2>
           {/* Courses */}
           <div className="day-courses">
-            {data[day].map(course => (
-              <div className={`course${!course[0] ? " break" : ""}`}>
+            {data[day].map((course, i) => (
+              <div key={i} className={`course${!course[0] ? " break" : ""}`}>
                 {/* Course Name */}
                 <h3 className="course-name">{course[0]}</h3>
                 {/* Course Timing */}
