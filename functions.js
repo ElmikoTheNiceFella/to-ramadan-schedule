@@ -153,9 +153,13 @@ export function breakCalculator(time) {
     let minutes = time % 60
 
     if (hours == 0) {
-        return `${minutes} minutes break`
-    } else {
-        return `${hours} hours and ${minutes} minutes break`
+        return `${minutes} minute${minutes > 1 ? "s" : ""} break`
+    } 
+    else if (minutes == 0) {
+        return `${hours} hour${hours > 1 ? "s" : ""} break`
+    }
+    else {
+        return `${hours} hour${hours > 1 ? "s" : ""} and ${minutes} minute${minutes > 1 ? "s" : ""} break`
     }
     
 }
