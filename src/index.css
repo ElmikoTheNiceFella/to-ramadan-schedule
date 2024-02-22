@@ -31,6 +31,7 @@ button {
   width: 50%;
   margin-top: 24px;
   font-size: 24px;
+  cursor: pointer;
 }
 .schedule-container {
   display: grid;
