@@ -4,7 +4,11 @@
   padding: 0;
   font-family: Lato, sans-serif;
 }
-
+@media print {
+  #schedule-to-print {
+    scale: 0.8;
+  }
+}
 :root {
   --bg: #0055b8;
   --text: #efefee;

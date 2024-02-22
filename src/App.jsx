@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import { extractSchedule } from "../scheduleConverter"
 import { ramadanStarts } from "../constants"
-import { usePDF } from "react-to-pdf"
+import ReactToPrint from "react-to-print"
 import Schedule from "./Schedule"
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
   const [canDownload, setCanDownload] = useState(false)
 
-  useEffect(() => { 
+  useEffect(() => {
     setCanDownload(false)
   }, [])
 
@@ -21,7 +21,9 @@ function App() {
     setCanDownload(true)
   }
 
-  const {toPDF, targetRef} = usePDF({filename: 'ramdan-schedule.pdf'})
+  let schedule = useRef();
+
+  // const {toPDF, targetRef} = usePDF({filename: 'ramdan-schedule.pdf'})
 
   // const handleDownload = () => {
   //   var element = document.getElementById('schedule')
@@ -34,9 +36,14 @@ function App() {
       <div className="input-holder">
         <textarea placeholder="Paste your schedule here..." value={val} onChange={e => setVal(e.target.value)}></textarea>
         <button onClick={handleClick}>Generate</button>
-        {canDownload && <button onClick={() => toPDF()}>Download PDF</button>}
+        {canDownload &&
+          <ReactToPrint
+            trigger={() => <button onClick={() => toPDF()}>Print PDF</button>}
+            content={() => schedule}
+          />
+        }
       </div>
-      <div ref={targetRef}>
+      <div id="schedule-to-print" ref={(el) => (schedule = el)}>
         <h1>Your Ramadan Schedule:</h1>
         <div id="schedule" className="schedule-container">
           {/* {Object.keys(ramadanStarts).map((time) => (
