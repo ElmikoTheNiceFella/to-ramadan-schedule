@@ -2,73 +2,72 @@ import { analyzeData } from "./functions.js";
 
 // Demo data
 const data = `
-2/20/24, 6:43 AM View My Classes
-https://campus.udst.edu.qa/psc/csqaprd9_21/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_MD_SP_FL.GBL?Action=U&MD=Y&GMenu=SSR_STUD… 1/2
-Print
-Abd El Hakim Akhadkhou
+Print Mirza Baig
 Winter 2024
 Credit
-COMM 1020 English Communication II
-Enrolled 3.00 60% and Letter Grade B.Sc. - IT
-Lecture - Class 1895 -Section 4
-02/01/2024 - 18/04/2024
-02/01/2024 - 18/04/2024
-Days: Thursday
-Times: 9:30AM to 11:00AM
-Days: Sunday
-Times: 9:30AM to 11:00AM
-05.1.65
-05.1.65
-INFS 1201 Computer Programming
-Enrolled 4.00 60% and Letter Grade B.Sc. - IT
-Lecture - Class 2575 -Section 1
-Laboratory - Class 2576 -Section 2
-02/01/2024 - 18/04/2024
-02/01/2024 - 18/04/2024
-Days: Tuesday
-Times: 8:00AM to 9:30AM
-Days: Sunday
-Times: 8:00AM to 9:30AM
-01.2.08
-01.2.08
-02/01/2024 - 18/04/2024 Days: Monday
-Times: 2:00PM to 5:00PM
-10.2.04
-INFT 1201 Computer Hardware
-Enrolled 4.00 60% and Letter Grade B.Sc. - IT
-Lecture - Class 2670 -Section 5
-Laboratory - Class 2671 -Section 6
+AECH 2122 Principles of Chemical Eng ll
+Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
+LEC - Class 1352 -Section 1 02/01/2024 - 18/04/2024 Days: Sunday
+Times: 12:00 to 14:00
+12.1.10
+AECH 2142 Basic Fluid Mechanics & Heat T
+Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
+LEC - Class 1354 -Section 2 02/01/2024 - 18/04/2024 Days: Monday
+Times: 09:00 to 11:00
+12.1.14
+AECH 2332 Chemical & Processing Plant Tr
+Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
+LEC - Class 1369 -Section 1
+LAB - Class 1371 -Section 3
 02/01/2024 - 18/04/2024 Days: Wednesday
-Times: 2:00PM to 5:00PM
-10.1.13
-02/01/2024 - 18/04/2024 Days: Monday
-Times: 9:30AM to 12:30PM
-10.1.13
-MATH 1020 Pre-Calculus
+Times: 14:00 to 15:00
+05.2.60
+02/01/2024 - 18/04/2024 Days: Thursday
+Times: 16:00 to 18:00
+09.1.74
+CHEM 3010 Petrochemistry
+Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
 Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
 Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
 Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
-2/20/24, 6:43 AM View My Classes
-https://campus.udst.edu.qa/psc/csqaprd9_21/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_MD_SP_FL.GBL?Action=U&MD=Y&GMenu=SSR_STUD… 2/2
-Enrolled 3.00 60% and Letter Grade B.Sc. - IT
-Lecture - Class 2062 -Section 11
+Status Units Grading Basis Academic Program Requirement Designation
+https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/cT_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 22/02/2024, 12:07 AM
+Page 1 of 2
+LEC - Class 1859 -Section 2
 02/01/2024 - 18/04/2024
 02/01/2024 - 18/04/2024
+Days: Monday
+Times: 12:00 to 13:00
+Days: Wednesday
+Times: 12:00 to 13:00
+05.2.44
+05.2.44
+CHEM 3011 Petrochemistry (Lab)
+Enrolled 1.00 60% and Letter Grade B.Sc. - Engineering
+LAB - Class 1861 -Section 2 02/01/2024 - 18/04/2024 Days: Monday
+Times: 14:00 to 17:00
+05.1.13
+COMM 1020 English Communication II
+Enrolled 3.00 60% and Letter Grade B.Sc. - Engineering
+LEC - Class 1908 -Section 17
 02/01/2024 - 18/04/2024
-Days: Tuesday
-Times: 2:00PM to 3:00PM
-Days: Thursday
-Times: 2:00PM to 3:00PM
+02/01/2024 - 18/04/2024
+Days: Wednesday
+Times: 10:00 to 12:00
 Days: Sunday
-Times: 2:00PM to 3:00PM
-12.2.37
-05.1.56
-05.2.37
+Times: 11:00 to 12:00
+10.2.05
+05.2.63
+Class Start/End Dates Days and Times Room
 Status Units Grading Basis Academic Program Requirement Designation
 Class Start/End Dates Days and Times Room
+Status Units Grading Basis Academic Program Requirement Designation
+Class Start/End Dates Days and Times Room
+https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/cT_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 22/02/2024, 12:07 AM
+Page 2 of 2
 `
 
 /* ----------------------------- */
@@ -101,3 +100,5 @@ export function extractSchedule(userData) {
 
     return days
 }
+
+console.log(extractSchedule(data))
