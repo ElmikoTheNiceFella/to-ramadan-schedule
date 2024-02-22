@@ -68,6 +68,9 @@ button {
   font-size: 24px;
   cursor: pointer;
 }
+button:active {
+  background-color: #002f64;
+}
 .schedule-container {
   display: grid;
   place-content: center;
