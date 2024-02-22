@@ -1,4 +1,4 @@
-import { analyzeData } from "./functions.js";
+import { analyzeData, timingToNum } from "./functions.js";
 
 // Demo data
 const data = `
@@ -136,7 +136,7 @@ export function extractSchedule(userData) {
     }
 
     for(let day of Object.keys(days)) {
-        days[day].sort((a,b) => +a[1].substring(0,2) - +b[1].substring(0,2))
+        days[day].sort((a,b) => timingToNum(a[1].substring(0,7)) - timingToNum(b[1].substring(0,7)))
     }
 
     return days

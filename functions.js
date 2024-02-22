@@ -101,7 +101,7 @@ function addToTiming(timing, duration) {
     return endTiming
 }
 
-function timingToNum(timing) {
+export function timingToNum(timing) {
     let hours = +timing.substring(0, 2);
     let minutes = +timing.substring(3, 5) / 60;
     
