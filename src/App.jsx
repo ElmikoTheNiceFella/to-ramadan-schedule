@@ -28,7 +28,10 @@ function App() {
   const handleSteps = () => setTutorial(t => !t)
 
   return (
-    <>
+    <div style={{
+      height: tutorial ? "100vh" :"auto",
+      overflowY: "hidden"
+    }} id="parent">
       {tutorial && <Steps exit={handleSteps} />}
       <h1>Enter Your Ramadan Schedule</h1>
       <div className="input-holder">
@@ -51,7 +54,7 @@ function App() {
           <Schedule data={data} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
