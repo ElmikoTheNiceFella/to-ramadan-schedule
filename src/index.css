@@ -8,6 +8,7 @@
 :root {
   --bg: #0055b8;
   --text: #efefee;
+  --text2: #8fe5ff;
   --border: #5bc0de;
 }
 .input-holder {
@@ -86,5 +87,5 @@ h1 {
   font-weight: 700;
   font-size: 18px;
   padding-top: 10px;
-  color: var(--border);
+  color: var(--text2);
 }
