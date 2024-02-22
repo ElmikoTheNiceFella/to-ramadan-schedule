@@ -15,6 +15,34 @@
   --text2: #8fe5ff;
   --border: #5bc0de;
 }
+.steps-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #36363620;
+}
+.steps-container > div {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+.steps-container > * {
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+}
+.steps-container > div > img {
+  width: min(800px,100vw);
+  filter: drop-shadow(0px 0px 20px #00000050);
+}
+.steps-control {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+/* .steps-control > button {
+  width: 100px;
+} */
 .input-holder {
   display: flex;
   flex-direction: column;
@@ -50,6 +78,7 @@ h1 {
 }
 .schedule {
   display: flex;
+  position: relative;
   background-color: var(--text);
   padding: 20px;
   width: fit-content;
