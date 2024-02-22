@@ -90,8 +90,7 @@ function addToTiming(timing, duration) {
     }
 
     // Get Suffix
-    let suffix = hours >= 12 ? "PM" : "AM"
-    suffix = timing.substring(5, 7) == "PM" && "PM";
+    const suffix = timing.substring(5, 7) == "PM" || hours >= 12 ? "PM" : "AM";
 
     // Format hours if minutes exceeds 60
     if (hours > 12) hours -= 12

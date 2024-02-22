@@ -22,9 +22,9 @@ function App() {
       </div>
       <h1>Your Ramadan Schedule:</h1>
       <div className="schedule-container">
-        {Object.keys(ramadanStarts).map((time) => (
+        {/* {Object.keys(ramadanStarts).map((time) => (
           <p>{time}</p>
-        ))}
+        ))} */}
         <Schedule data={data} />
       </div>
     </>
