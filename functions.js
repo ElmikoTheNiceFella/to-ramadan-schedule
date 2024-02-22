@@ -76,6 +76,7 @@ function addToTiming(timing, duration) {
 
     // Get timing as hours and minutes
     const timingHours = +timing.substring(0, 2)
+    console.log(timingHours)
     const timingMinutes = +timing.substring(3, 5)
 
     // Calculate hours
@@ -90,6 +91,7 @@ function addToTiming(timing, duration) {
 
     // Get Suffix
     let suffix = hours >= 12 ? "PM" : "AM"
+    suffix = timing.substring(5, 7) == "PM" && "PM";
 
     // Format hours if minutes exceeds 60
     if (hours > 12) hours -= 12
@@ -186,4 +188,4 @@ export function analyzeData(data) {
     return finalStuff
 }
 
-console.log(analyzeData(data))
+console.log(addToTiming("03:00PM", 120))

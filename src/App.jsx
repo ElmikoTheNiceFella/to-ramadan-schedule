@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { extractSchedule } from "../scheduleConverter"
+import { ramadanStarts } from "../constants"
 import Schedule from "./Schedule"
 
 function App() {
@@ -21,7 +22,9 @@ function App() {
       </div>
       <h1>Your Ramadan Schedule:</h1>
       <div className="schedule-container">
-        
+        {Object.keys(ramadanStarts).map((time) => (
+          <p>{time}</p>
+        ))}
         <Schedule data={data} />
       </div>
     </>
