@@ -48,9 +48,6 @@ function App() {
       <div id="schedule-to-print" ref={(el) => (schedule = el)}>
         <h1>Your Ramadan Schedule:</h1>
         <div id="schedule" className="schedule-container">
-          {/* {Object.keys(ramadanStarts).map((time) => (
-            <p>{time}</p>
-          ))} */}
           <Schedule data={data} />
         </div>
       </div>

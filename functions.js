@@ -1,74 +1,5 @@
 import { ramadanStarts, ramadanTimings } from "./constants.js";
 
-const data = `
-Print Mirza Baig
-Winter 2024
-Credit
-AECH 2122 Principles of Chemical Eng ll
-Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
-LEC - Class 1352 -Section 1 02/01/2024 - 18/04/2024 Days: Sunday
-Times: 12:00 to 14:00
-12.1.10
-AECH 2142 Basic Fluid Mechanics & Heat T
-Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
-LEC - Class 1354 -Section 2 02/01/2024 - 18/04/2024 Days: Monday
-Times: 09:00 to 11:00
-12.1.14
-AECH 2332 Chemical & Processing Plant Tr
-Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
-LEC - Class 1369 -Section 1
-LAB - Class 1371 -Section 3
-02/01/2024 - 18/04/2024 Days: Wednesday
-Times: 14:00 to 15:00
-05.2.60
-02/01/2024 - 18/04/2024 Days: Thursday
-Times: 16:00 to 18:00
-09.1.74
-CHEM 3010 Petrochemistry
-Enrolled 2.00 60% and Letter Grade B.Sc. - Engineering
-Status Units Grading Basis Academic Program Requirement Designation
-Class Start/End Dates Days and Times Room
-Status Units Grading Basis Academic Program Requirement Designation
-Class Start/End Dates Days and Times Room
-Status Units Grading Basis Academic Program Requirement Designation
-Class Start/End Dates Days and Times Room
-Status Units Grading Basis Academic Program Requirement Designation
-https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/cT_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 22/02/2024, 12:07 AM
-Page 1 of 2
-LEC - Class 1859 -Section 2
-02/01/2024 - 18/04/2024
-02/01/2024 - 18/04/2024
-Days: Monday
-Times: 12:00 to 13:00
-Days: Wednesday
-Times: 12:00 to 13:00
-05.2.44
-05.2.44
-CHEM 3011 Petrochemistry (Lab)
-Enrolled 1.00 60% and Letter Grade B.Sc. - Engineering
-LAB - Class 1861 -Section 2 02/01/2024 - 18/04/2024 Days: Monday
-Times: 14:00 to 17:00
-05.1.13
-COMM 1020 English Communication II
-Enrolled 3.00 60% and Letter Grade B.Sc. - Engineering
-LEC - Class 1908 -Section 17
-02/01/2024 - 18/04/2024
-02/01/2024 - 18/04/2024
-Days: Wednesday
-Times: 10:00 to 12:00
-Days: Sunday
-Times: 11:00 to 12:00
-10.2.05
-05.2.63
-Class Start/End Dates Days and Times Room
-Status Units Grading Basis Academic Program Requirement Designation
-Class Start/End Dates Days and Times Room
-Status Units Grading Basis Academic Program Requirement Designation
-Class Start/End Dates Days and Times Room
-https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/cT_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 22/02/2024, 12:07 AM
-Page 2 of 2
-`
-
 function addToTiming(timing, duration) {
     // Get duration as hours and minutes
     const durationHours = Math.floor(duration / 60)
@@ -134,15 +65,24 @@ function timingToRamdan(timing) {
         timings = timings.map(v => v.padStart(7, '0')) // 8:00AM => 08:00AM & 11:00AM => 11:00AM
     }
 
+    console.log(timings)
     let start = ramadanStarts[timings[0]]
 
     // Calculate the duration
     let duration = timingToNum(timings[1]) - timingToNum(timings[0])
 
-    console.log(duration)
     let ramadanDuration = ramadanTimings[duration*60]
 
     // Get timing end
+    if (start === undefined) {
+        for(let i = 0; i < Object.keys(ramadanStarts).length; i++) {
+            if ( timingToNum(timings[0]) < timingToNum(Object.keys(ramadanStarts)[i+1]) && timingToNum(timings[0]) > timingToNum(Object.keys(ramadanStarts)[i]) ) {
+                start = `Between ${ramadanStarts[Object.keys(ramadanStarts)[i]]} and ${ramadanStarts[Object.keys(ramadanStarts)[i+1]]}`
+                break
+            }
+        }
+        return `${breakCalculator(ramadanDuration).substring(0, breakCalculator(ramadanDuration).length - 6)} Class\n${start}`
+    }
     let end = addToTiming(start, ramadanDuration)
 
     return `${start} to ${end}`
@@ -151,6 +91,7 @@ function timingToRamdan(timing) {
 export function breakCalculator(time) {
     let hours = Math.floor(time / 60)
     let minutes = time % 60
+    if (!hours && !minutes) return "Unknown Break Time"
 
     if (hours == 0) {
         return `${minutes} minute${minutes > 1 ? "s" : ""} break`
@@ -202,5 +143,3 @@ export function analyzeData(data) {
 
     return finalStuff
 }
-
-console.log(addToTiming("03:00PM", 120))

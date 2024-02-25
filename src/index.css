@@ -108,6 +108,7 @@ h1 {
   width: 200px;
   place-content: center;
   border: 2px solid var(--border);
+  text-align: center;
 }
 .course.break {
   background: var(--text);
