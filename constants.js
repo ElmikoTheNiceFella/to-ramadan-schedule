@@ -25,3 +25,11 @@ export const ramadanStarts = {
   "07:00PM": "04:30PM"
 }
 
+export const fullDays = {
+    "Su": "Sunday",
+    "Mo": "Monday",
+    "Tu": "Tuesday",
+    "We": "Wednesday",
+    "Th": "Thursday",
+    "Sa": "Saturday"
+}
