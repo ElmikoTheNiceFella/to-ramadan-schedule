@@ -103,9 +103,9 @@ export function breakCalculator(time) {
     
 }
 
-/* ------------------------ */
-/* Main conversion function */
-/* ------------------------ */
+/* ----------------------------- */
+/* Main data extraction function */
+/* ----------------------------- */
 
 export function analyzeData(data) {
     const lines = data.split("\n")
