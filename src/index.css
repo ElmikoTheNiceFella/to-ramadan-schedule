@@ -132,7 +132,6 @@ h1 {
 .course {
   background: var(--bg);
   display: grid;
-  height: 100px;
   width: 200px;
   place-content: center;
   border: 2px solid var(--border);
