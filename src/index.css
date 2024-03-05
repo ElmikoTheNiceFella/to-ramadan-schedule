@@ -133,14 +133,17 @@ h1 {
   background: var(--bg);
   display: grid;
   width: 200px;
+  box-sizing: border-box;
   place-content: center;
-  border: 2px solid var(--border);
   text-align: center;
+  border: 1px solid var(--border);
 }
 .course.break {
+  box-sizing: border-box;
   background: var(--text);
   color: var(--bg);
-  border: 2px solid var(--border);
+  z-index: 2;
+  border: 1px solid var(--border);
 }
 .course.break > .course-timing {
   font-weight: 700;

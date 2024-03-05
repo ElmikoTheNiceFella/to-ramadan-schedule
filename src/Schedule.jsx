@@ -11,7 +11,7 @@ const Schedule = ({ data }) => {
     <div style={{
       height: "100vh"
     }} className="schedule">
-      {Object.keys(data).map(day => (
+      {Object.keys(data).map((day, k) => (
         <div key={day} className="day-container">
           {/* Days */}
           <h2 style={{
@@ -25,12 +25,17 @@ const Schedule = ({ data }) => {
               <div key={i} style={{
                 position: "absolute",
                 top: course[0] ? (timingToNum(course[1].substring(0, 7)) - base) * 100 : course[1] ? (timingToNum(data[day][i - 1][1].substring(11, 19)) - base) * 100 : 0,
-                height: course[0] ? "100px" : `${course[2]}px`
+                height: `${course[2]*100}px`,
+                backgroundColor: course[1] && !course[0] && course[2] * 60 < 15 ? "#0055b8" : !course[0] && !course[1] ? "#efefee" : !course[0] ? "#efefee": "#0055b8",
+                borderTop: i == 0 ? "2px solid #5bc0de" : "",
+                borderBottom: i == data[day].length - 1 ? "2px solid #5bc0de" : "",
+                borderLeft: k == 0 ? "2px solid #5bc0de" : "",
+                borderRight: k == Object.keys(data).length-1 ? "2px solid #5bc0de" : "",
               }} className={`course${!course[0] ? " break" : ""}`}>
                 {/* Course Name */}
                 <h3 className="course-name">{course[0]}</h3>
                 {/* Course Timing */}
-                <p className="course-timing">{course[1]}</p>
+                <p className="course-timing">{course[1] && !course[0] && course[2] * 60 < 15 ? "" : course[1]}</p>
               </div>
             ))}
           </div>

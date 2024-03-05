@@ -22,7 +22,7 @@ export function extractScheduleStudent(userData) {
     // Add days and timings to days object
     for(let course of data) {
         for(let i = 0; i < course.timings.length; i += 2) {
-            days[course.timings[i]].push([course.name, course.timings[i+1]])
+            days[course.timings[i]].push([course.name, course.timings[i+1],timingToNum(course.timings[i+1].substring(11,19)) - timingToNum(course.timings[i+1].substring(0,7))])
         }
     }
 
@@ -39,7 +39,7 @@ export function extractScheduleStudent(userData) {
                 const time1 = timingToNum(currentDay[i][1].substring(0,7)) * 60
                 const time2 = timingToNum(currentDay[i-1][1].substring(11,currentDay[i-1][1].length)) * 60    
                 const gap = breakCalculator(time1 - time2)
-                currentDay.splice(i, 0, ["", gap, time1 - time2])
+                currentDay.splice(i, 0, ["", gap, (time1 - time2)/60])
             }
         }
         days[day] = currentDay
@@ -48,7 +48,7 @@ export function extractScheduleStudent(userData) {
     // Add Gap at non 8:00AM start
     for(let day of Object.keys(days)) {
         if (days[day][0][1].substring(0,7) !== "08:00AM") {
-            days[day].unshift(["", "", (timingToNum(days[day][0][1].substring(0,7))-timingToNum("08:00AM")) * 60])
+            days[day].unshift(["", "", (timingToNum(days[day][0][1].substring(0,7))-timingToNum("08:00AM"))])
         }
     }
 
