@@ -1,4 +1,5 @@
-import { analyzeData, timingToNum, breakCalculator, analyzeInstructorData, studentDemoData, instructorDemoData } from "./functions.js";
+import { analyzeData, timingToNum, breakCalculator, analyzeInstructorData } from "./functions.js";
+import {studentDemoData, instructorDemoData} from './constants.js'
 
 /* -------------------------- */
 /* Data Refactoring Functions */
@@ -18,35 +19,37 @@ export function extractScheduleStudent(userData) {
 
     const data = analyzeData(userData)
 
+    // Add days and timings to days object
     for(let course of data) {
         for(let i = 0; i < course.timings.length; i += 2) {
             days[course.timings[i]].push([course.name, course.timings[i+1]])
         }
     }
 
+    // Sort by time
     for(let day of Object.keys(days)) {
         days[day].sort((a,b) => timingToNum(a[1].substring(0,7)) - timingToNum(b[1].substring(0,7)))
     }
 
+    // Add Breaks
     for(let day of Object.keys(days)) { 
         const currentDay = days[day]
         for(let i = 0; i < currentDay.length; i++) {
-            if (i !== 0) {
+            if (i % 2) {
                 const time1 = timingToNum(currentDay[i][1].substring(0,7)) * 60
-
-                const time2 = timingToNum(currentDay[i-1][1].substring(11,currentDay[i-1][1].length)) * 60
-
+                const time2 = timingToNum(currentDay[i-1][1].substring(11,currentDay[i-1][1].length)) * 60    
                 const gap = breakCalculator(time1 - time2)
-
                 currentDay.splice(i, 0, ["", gap])
-                i++
-            } else {
-                if (days[day].length > 0 && days[day][0][1].substring(0, 7) !== "08:00AM") {
-                    currentDay.unshift(["", ""])
-                }
             }
         }
         days[day] = currentDay
+    }
+
+    // Add Gap at non 8:00AM start
+    for(let day of Object.keys(days)) {
+        if (days[day][0][1].substring(0,7) !== "08:00AM") {
+            days[day].unshift(["", ""])
+        }
     }
 
     return days
