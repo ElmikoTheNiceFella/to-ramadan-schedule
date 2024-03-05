@@ -295,6 +295,10 @@ export function extractScheduleStudent(userData) {
 
                 currentDay.splice(i, 0, ["", gap])
                 i++
+            } else {
+                if (days[day].length > 0 && days[day][0][1].substring(0, 7) !== "08:00AM") {
+                    currentDay.unshift(["", ""])
+                }
             }
         }
         days[day] = currentDay
