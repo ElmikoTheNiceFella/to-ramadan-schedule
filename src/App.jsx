@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { extractScheduleStudent } from "../scheduleConverter"
+import { extractScheduleStudent, extractScheduleInstructor } from "../scheduleConverter"
 import ReactToPrint from "react-to-print"
 import Schedule from "./Schedule"
 import Steps from "./Steps"
@@ -10,6 +10,8 @@ function App() {
 
   const [data, setData] = useState(extractScheduleStudent(""))
 
+  const [isStudent, setIsStudent] = useState(true);
+
   const [canDownload, setCanDownload] = useState(false)
 
   const [tutorial, setTutorial] = useState(false)
@@ -19,7 +21,11 @@ function App() {
   }, [])
 
   const handleClick = () => {
-    setData(extractScheduleStudent(val))
+    if (isStudent) {
+      setData(extractScheduleStudent(val))
+    } else {
+      setData(extractScheduleInstructor(val))
+    }
     setCanDownload(true)
   }
 
@@ -35,9 +41,9 @@ function App() {
       {tutorial && <Steps exit={handleSteps} />}
       <h1>Enter Your Ramadan Schedule</h1>
       <div className="type">
-        <input type="radio" name="student-instructor" id="student" />
+        <input type="radio" checked={isStudent} onChange={() => setIsStudent(p => !p)} name="student-instructor" id="student" />
         <label htmlFor="student">Student</label>
-        <input type="radio" name="student-instructor" id="instructor" />
+        <input type="radio" checked={!isStudent} onChange={() => setIsStudent(p => !p)} name="student-instructor" id="instructor" />
         <label htmlFor="instructor">Instructor</label>
       </div>
       <div className="input-holder">
