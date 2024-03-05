@@ -51,17 +51,33 @@
   width: 100px;
 } */
 /* Student Instructor Input */
+.type {
+  width: min(70%, 700px);
+  display: flex;
+  margin: auto;
+  height: 50px;
+  border: 3px solid var(--bg);
+  
+}
+.type > label {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  width: 50%;
+  font-size: 18px;
+  color: var(--bg);
+}
 .type > input {
   all:unset;
   position: absolute;
   width: 0px;
   height: 0px;
 }
-.type > .input:checked + label {
+.type > #student:checked + [for="student"],
+.type > #instructor:checked + [for="instructor"] {
   background-color: var(--bg);
   color: var(--text);
 }
-.type 
 .input-holder {
   display: flex;
   flex-direction: column;

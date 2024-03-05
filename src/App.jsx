@@ -33,13 +33,13 @@ function App() {
       overflowY: "hidden"
     }} id="parent">
       {tutorial && <Steps exit={handleSteps} />}
+      <h1>Enter Your Ramadan Schedule</h1>
       <div className="type">
         <input type="radio" name="student-instructor" id="student" />
         <label htmlFor="student">Student</label>
         <input type="radio" name="student-instructor" id="instructor" />
-        <label htmlFor="i☻nstructor">Instructor</label>
+        <label htmlFor="instructor">Instructor</label>
       </div>
-      <h1>Enter Your Ramadan Schedule</h1>
       <div className="input-holder">
         <textarea placeholder="Paste your schedule here..." value={val} onChange={e => setVal(e.target.value)}></textarea>
         <button onClick={handleSteps}>Tutorial</button>
