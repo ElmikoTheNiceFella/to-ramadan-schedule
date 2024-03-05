@@ -1,4 +1,4 @@
-import { ramadanStarts, ramadanTimings } from "./constants.js";
+import { ramadanStarts, ramadanTimings, fullDays } from "./constants.js";
 
 const tData = `
 My Teaching Schedule > Winter 2024 > University of Doha
@@ -259,7 +259,6 @@ function addToTiming(timing, duration) {
 
     // Get timing as hours and minutes
     const timingHours = +timing.substring(0, 2)
-    console.log(timingHours)
     const timingMinutes = +timing.substring(3, 5)
 
     // Calculate hours
@@ -317,7 +316,6 @@ function timingToRamdan(timing) {
         timings = timings.map(v => v.padStart(7, '0')) // 8:00AM => 08:00AM & 11:00AM => 11:00AM
     }
 
-    console.log(timings)
     let start = ramadanStarts[timings[0]]
 
     // Calculate the duration
@@ -403,10 +401,11 @@ function analyzeTacherData(data) {
     let finalData = {}
     for(let i = 0; i < lines.length; i++) {
         const line = lines[i]
+        console.log(line)
 
         if (/[A-Z]{4}\s[0-9]{4}/.test(line)) {
-            finalData[courseName] = courseData
-            courseName = line.match(/([A-Z]{4}\s[0-9]{4})/)[0]
+            if (courseName) finalData[courseName] = courseData
+            courseName = line.match(/([A-Z]{4}\s[0-9]{4}\-[0-9]{0,2})/)[0]
             courseData = []
         }
         if (Object.keys(fullDays).includes(line.substring(0, 2))) {
@@ -419,5 +418,5 @@ function analyzeTacherData(data) {
     return finalData
 }
 
-console.log(analyzeData(sData))
+// console.log(analyzeData(sData))
 console.log(analyzeTacherData(tData))
