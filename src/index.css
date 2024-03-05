@@ -50,6 +50,18 @@
 /* .steps-control > button {
   width: 100px;
 } */
+/* Student Instructor Input */
+.type > input {
+  all:unset;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+.type > .input:checked + label {
+  background-color: var(--bg);
+  color: var(--text);
+}
+.type 
 .input-holder {
   display: flex;
   flex-direction: column;

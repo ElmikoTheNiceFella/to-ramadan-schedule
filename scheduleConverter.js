@@ -1,4 +1,4 @@
-import { analyzeData, timingToNum, breakCalculator } from "./functions.js";
+import { analyzeData, timingToNum, breakCalculator, analyzeInstructorData } from "./functions.js";
 
 // Demo data
 const data = `
@@ -143,7 +143,7 @@ Times: 12:30 to 14:00
 /* Main data extraction function */
 /* ----------------------------- */
 
-export function extractSchedule(userData) {
+export function extractScheduleStudent(userData) {
     
     let days = {
         "Sunday": [],
@@ -187,4 +187,8 @@ export function extractSchedule(userData) {
     return days
 }
 
-console.log(extractSchedule(data))
+export function extractScheduleInstructor(userData) {
+
+}
+
+// console.log(extractSchedule(data))

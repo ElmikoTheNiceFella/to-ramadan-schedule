@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { extractSchedule } from "../scheduleConverter"
+import { extractScheduleStudent } from "../scheduleConverter"
 import ReactToPrint from "react-to-print"
 import Schedule from "./Schedule"
 import Steps from "./Steps"
@@ -8,7 +8,7 @@ function App() {
 
   const [val, setVal] = useState("")
 
-  const [data, setData] = useState(extractSchedule(""))
+  const [data, setData] = useState(extractScheduleStudent(""))
 
   const [canDownload, setCanDownload] = useState(false)
 
@@ -19,7 +19,7 @@ function App() {
   }, [])
 
   const handleClick = () => {
-    setData(extractSchedule(val))
+    setData(extractScheduleStudent(val))
     setCanDownload(true)
   }
 
@@ -33,6 +33,12 @@ function App() {
       overflowY: "hidden"
     }} id="parent">
       {tutorial && <Steps exit={handleSteps} />}
+      <div className="type">
+        <input type="radio" name="student-instructor" id="student" />
+        <label htmlFor="student">Student</label>
+        <input type="radio" name="student-instructor" id="instructor" />
+        <label htmlFor="i☻nstructor">Instructor</label>
+      </div>
       <h1>Enter Your Ramadan Schedule</h1>
       <div className="input-holder">
         <textarea placeholder="Paste your schedule here..." value={val} onChange={e => setVal(e.target.value)}></textarea>

@@ -394,7 +394,7 @@ export function analyzeData(data) {
     return finalStuff
 }
 
-function analyzeTacherData(data) {
+export function analyzeInstructorData(data) {
     const lines = data.split("\n")
     let courseData = []
     let courseName = ""
@@ -419,4 +419,4 @@ function analyzeTacherData(data) {
 }
 
 // console.log(analyzeData(sData))
-console.log(analyzeTacherData(tData))
+console.log(analyzeInstructorData(tData))
