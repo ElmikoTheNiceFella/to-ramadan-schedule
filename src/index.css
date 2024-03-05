@@ -134,6 +134,7 @@ h1 {
   display: grid;
   width: 200px;
   box-sizing: border-box;
+  font-size: 14px;
   place-content: center;
   text-align: center;
   border: 1px solid var(--border);
@@ -160,7 +161,7 @@ h1 {
 }
 .course:not(.break) > .course-timing {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   padding-top: 10px;
   color: var(--text2);
 }
