@@ -9,7 +9,7 @@ const Schedule = ({ data }) => {
     console.log("ting", (timingToNum(data["Monday"][1][1].substring(0, 7)) - base) * 100)
   return (
     <div style={{
-      height: "100vh"
+      height: "1000px"
     }} className="schedule">
       {Object.keys(data).map((day, k) => (
         <div key={day} className="day-container">
