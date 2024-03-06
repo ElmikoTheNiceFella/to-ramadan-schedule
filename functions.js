@@ -1,4 +1,4 @@
-import { ramadanStarts, ramadanTimings, fullDays } from "./constants.js";
+import { ramadanStarts, ramadanTimings, fullDays, studentDemoData } from "./constants.js";
 
 function addToTiming(timing, duration) {
     // Get duration as hours and minutes
@@ -163,3 +163,26 @@ export function analyzeInstructorData(data) {
     }
     return finalData
 }
+
+export function errorTimingToData(timing) {
+    let hours, minutes;
+    
+    if (timing.length > 46) {
+        hours = +timing.match(/.*(?=(hour))/ig)[0]
+        minutes = +timing.match(/(?<=(and)).*(?=(minute))/ig)[0]
+    } else {
+        hours = timing.includes("hour") ? +timing.match(/.*(?=(hour))/ig)[0] : false
+        minutes = timing.includes("minute") ? +timing.match(/.*(?=(minute))/ig)[0] : false
+    }
+
+    const duration = hours ? hours * 60 + (minutes ? minutes : 0) : minutes ? minutes : false
+
+    const estim1 = timing.substring(timing.length-19, timing.length-12)
+    const estim2 = timing.substring(timing.length-7, timing.length)
+
+    const estimatedStartTime = addToTiming(estim1, Math.round((timingToNum(estim2)*60 - timingToNum(estim1)*60)/2))
+
+    return [duration, estimatedStartTime]
+}
+
+console.log(analyzeData(studentDemoData))
