@@ -180,9 +180,10 @@ export function errorTimingToData(timing) {
     const estim1 = timing.substring(timing.length-19, timing.length-12)
     const estim2 = timing.substring(timing.length-7, timing.length)
 
-    const estimatedStartTime = addToTiming(estim1, Math.round((timingToNum(estim2)*60 - timingToNum(estim1)*60)/2))
+    const estimatedAverage = addToTiming(estim1, Math.round((timingToNum(estim2)*60 - timingToNum(estim1)*60)/2))
+    const estimatedStartTime = timingToNum(estim2) - timingToNum(estimatedAverage)
 
-    return [duration, estimatedStartTime]
+    return [duration/60, estimatedStartTime, estimatedAverage]
 }
 
 console.log(analyzeData(studentDemoData))

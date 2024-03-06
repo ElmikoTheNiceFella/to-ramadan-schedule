@@ -159,9 +159,14 @@ h1 {
   color: var(--text);
   text-align: center;
 }
+.room-number {
+  color: white;
+  margin: 3px 0px;
+  font-weight: 600;
+}
 .course:not(.break) > .course-timing {
   font-weight: 700;
   font-size: 14px;
-  padding-top: 10px;
   color: var(--text2);
+  padding: 0px 10px;
 }

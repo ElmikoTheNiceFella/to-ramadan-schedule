@@ -261,7 +261,7 @@ LAB - Class 2576 -Section 2
 Days: Monday
 Times: 14:00 to 17:00
 Days: Thursday
-Times: 14:00 to 17:00
+Times: 08:00 to 09:00
 10.2.04
  
  
