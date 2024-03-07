@@ -1,6 +1,6 @@
-import { ramadanStarts, ramadanTimings, fullDays, studentDemoData } from "./constants.js";
+import { ramadanStarts, ramadanTimings, fullDays, studentDemoData, instructorDemoData } from "./constants.js";
 
-function addToTiming(timing, duration) {
+export function addToTiming(timing, duration) {
     // Get duration as hours and minutes
     const durationHours = Math.floor(duration / 60)
     const durationMinutes = duration % 60
@@ -111,12 +111,16 @@ export function analyzeData(data) {
     const lines = data.split("\n")
     
     let finalStuff = []
-    
+    console.log(data)
     let i = -1;
+    let course = "";
     for(let line of lines) {
-        let course = "";
-        if (/([A-Z]{4}\s[0-9]{4})/.test(line)) {
-            course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0]
+        if (/([A-Z]{4}\s[0-9]{4})/.test(line) || line.startsWith("LAB")) {
+            if (line.startsWith("LAB")) {
+                course = course.substring(0, course.length-5) + "- LAB"
+            } else {
+                course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0] + " - LEC"
+            }
             finalStuff.push({name: course})
             i++
         };
@@ -133,6 +137,14 @@ export function analyzeData(data) {
 
                 }  else {
                     finalStuff[i].timings = [line.match(/(?<=:\s)(.*)/)[0]]
+                }
+            }
+            if (/[0-9]{2}\.[0-9]\.[0-9]{2}/.test(line)) {
+                console.log("Found room number", finalStuff[i].timings)
+                for(let j = 0; j <  finalStuff[i].timings.length; j++) {
+                    if (finalStuff[i].timings[j].includes(" to ") || finalStuff[i].timings[j].includes("Between")) {
+                        finalStuff[i].timings[j] = [finalStuff[i].timings[j], line]
+                    }
                 }
             }
         }
@@ -189,4 +201,6 @@ export function errorTimingToData(timing) {
     return [duration/60, estimatedStartTime, estimatedAverage, start]
 }
 
-console.log(errorTimingToData("1 hour Class\nBetween 11:00AM and 12:00PM"))
+console.log(analyzeData(studentDemoData))
+console.log("------------------------------------------------")
+console.log(analyzeInstructorData(instructorDemoData))

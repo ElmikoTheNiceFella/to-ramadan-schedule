@@ -23,10 +23,10 @@ export function extractScheduleStudent(userData) {
     
     for(let course of data) {
         for(let i = 0; i < course.timings.length; i += 2) {
-            if (course.timings[i+1].length <= 30) {
-                days[course.timings[i]].push([course.name, course.timings[i+1],timingToNum(course.timings[i+1].substring(11,19)) - timingToNum(course.timings[i+1].substring(0,7))])
+            if (course.timings[i+1][0].length <= 30) {
+                days[course.timings[i]].push([course.name, course.timings[i+1][0],timingToNum(course.timings[i+1][0].substring(11,19)) - timingToNum(course.timings[i+1][0].substring(0,7)), course.timings[i+1][1]])
             } else {
-                days[course.timings[i]].push([course.name, course.timings[i+1],errorTimingToData(course.timings[i+1])[0]])
+                days[course.timings[i]].push([course.name, course.timings[i+1][0],errorTimingToData(course.timings[i+1][0])[0], course.timings[i+1][1]])
             }
         }
     }
@@ -48,16 +48,18 @@ export function extractScheduleStudent(userData) {
                     let gapHeight;
                     if (isNaN(time1) && isNaN(time2)) {
                         // Start
-                        const [_, _1, startTime1] = errorTimingToData(currentDay[i-1][1])
+                        const startTime1 = errorTimingToData(currentDay[i-1][1])[2]
                         // End
-                        const [durationH2, _2, startTime2] = errorTimingToData(currentDay[i][1])
+                        const [durationH2, _2, startTime2, _4] = errorTimingToData(currentDay[i][1])
                         gapHeight = timingToNum(addToTiming(startTime2, durationH2)) - timingToNum(startTime1)
                     } else if (isNaN(time1)) {
-                        const [durationH, _, startTime] = errorTimingToData(currentDay[i][1])
-                        gapHeight = timingToNum(startTime) - time2
-                    } else {
-                        const [durationH, _, startTime] = errorTimingToData(currentDay[i-1][1])
-                        gapHeight = time1 - timingToNum(addToTiming(startTime, durationH))
+                        const startTime = errorTimingToData(currentDay[i][1])[2]
+                        gapHeight = timingToNum(startTime) - time2/60
+                    } else if (isNaN(time2)) {
+                        console.log(currentDay[i-1][1])
+                        console.log(currentDay[i][1].substring(0,7))
+                        const [durationH, _, startTime, _1] = errorTimingToData(currentDay[i-1][1])
+                        gapHeight = (time1/60) - timingToNum(addToTiming(startTime, durationH*60))
                     }
 
                     currentDay.splice(i, 0, ["", gap, gapHeight, errorTimingToData(currentDay[i][1])[1]])

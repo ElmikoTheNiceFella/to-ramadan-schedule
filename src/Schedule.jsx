@@ -36,7 +36,7 @@ const Schedule = ({ data }) => {
                 {/* Course Name */}
                 <h3 className="course-name">{course[0]}</h3>
                 {/* Room Number */}
-                {course[0] && <p className="room-number">10.2.04</p>}
+                {course[0] && <p className="room-number">{course[3]}</p>}
                 {/* Course Timing */}
                 <p className="course-timing">{course[1] && !course[0] && course[2] * 60 < 15 ? "" : course[1]}</p>
               </div>
