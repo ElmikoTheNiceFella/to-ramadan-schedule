@@ -1,4 +1,4 @@
-import { analyzeData, timingToNum, breakCalculator, analyzeInstructorData, errorTimingToData } from "./functions.js";
+import { addToTiming, analyzeData, timingToNum, breakCalculator, analyzeInstructorData, errorTimingToData } from "./functions.js";
 import {studentDemoData, instructorDemoData} from './constants.js'
 
 /* -------------------------- */
@@ -42,11 +42,25 @@ export function extractScheduleStudent(userData) {
         for(let i = 0; i < currentDay.length; i++) {
             if (i % 2) {
                 const time1 = timingToNum(currentDay[i][1].substring(0,7)) * 60
-                const time2 = timingToNum(currentDay[i-1][1].substring(11,currentDay[i-1][1].length)) * 60  
+                const time2 = timingToNum(currentDay[i-1][1].substring(11)) * 60  
                 const gap = breakCalculator(time1 - time2)
                 if (gap === "Unknown Break Time") {
-                    // let gapTime = !isNan(time2)
-                    currentDay.splice(i, 0, ["", gap, errorTimingToData(currentDay[i][1])[1]])
+                    let gapHeight;
+                    if (isNaN(time1) && isNaN(time2)) {
+                        // Start
+                        const [_, _1, startTime1] = errorTimingToData(currentDay[i-1][1])
+                        // End
+                        const [durationH2, _2, startTime2] = errorTimingToData(currentDay[i][1])
+                        gapHeight = timingToNum(addToTiming(startTime2, durationH2)) - timingToNum(startTime1)
+                    } else if (isNaN(time1)) {
+                        const [durationH, _, startTime] = errorTimingToData(currentDay[i][1])
+                        gapHeight = timingToNum(startTime) - time2
+                    } else {
+                        const [durationH, _, startTime] = errorTimingToData(currentDay[i-1][1])
+                        gapHeight = time1 - timingToNum(addToTiming(startTime, durationH))
+                    }
+
+                    currentDay.splice(i, 0, ["", gap, gapHeight, errorTimingToData(currentDay[i][1])[1]])
                 } else {
                     currentDay.splice(i, 0, ["", gap, (time1 - time2)/60])
                 }

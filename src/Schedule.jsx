@@ -25,7 +25,7 @@ const Schedule = ({ data }) => {
             {data[day].map((course, i) => (
               <div key={i} style={{
                 position: "absolute",
-                top: course[0] ? (course[1].length > 30 ? (timingToNum(errorTimingToData(course[1])[2]) - base) * 100 : (timingToNum(course[1].substring(0, 7)) - base) * 100) : course[1] ? (course[1] == "Unknown Break Time" ? (course[2]) * 100 : (timingToNum(data[day][i - 1][1].substring(11, 19)) - base) * 100) : 0,
+                top: course[0] ? (course[1].length > 30 ? (timingToNum(errorTimingToData(course[1])[2]) - base) * 100 : (timingToNum(course[1].substring(0, 7)) - base) * 100) : course[1] ? (course[1] == "Unknown Break Time" ? (timingToNum(errorTimingToData(data[day][i - 1][1])[3]) - base) * 100 : (timingToNum(data[day][i - 1][1].substring(11, 19)) - base) * 100) : 0,
                 height: `${course[2] * 100}px`,
                 backgroundColor: course[1] && !course[0] && course[2] * 60 < 15 ? "#0055b8" : !course[0] && !course[1] ? "#efefee" : !course[0] ? "#efefee" : "#0055b8",
                 borderTop: i == 0 ? "2px solid #5bc0de" : "",

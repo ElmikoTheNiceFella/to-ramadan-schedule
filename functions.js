@@ -165,6 +165,7 @@ export function analyzeInstructorData(data) {
 }
 
 export function errorTimingToData(timing) {
+    if (timing.length < 40) return [0,0,0,timing.substring(11)]
     let hours, minutes;
     
     if (timing.length > 46) {
@@ -183,7 +184,9 @@ export function errorTimingToData(timing) {
     const estimatedAverage = addToTiming(estim1, Math.round((timingToNum(estim2)*60 - timingToNum(estim1)*60)/2))
     const estimatedStartTime = timingToNum(estim2) - timingToNum(estimatedAverage)
 
-    return [duration/60, estimatedStartTime, estimatedAverage]
+    const start = addToTiming(estimatedAverage, duration)
+
+    return [duration/60, estimatedStartTime, estimatedAverage, start]
 }
 
-console.log(analyzeData(studentDemoData))
+console.log(errorTimingToData("1 hour Class\nBetween 11:00AM and 12:00PM"))
