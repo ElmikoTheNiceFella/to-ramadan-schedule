@@ -1,6 +1,6 @@
-import { ramadanStarts, ramadanTimings, fullDays } from "./constants.js";
+import { ramadanStarts, ramadanTimings, fullDays, studentDemoData, instructorDemoData } from "./constants.js";
 
-function addToTiming(timing, duration) {
+export function addToTiming(timing, duration) {
     // Get duration as hours and minutes
     const durationHours = Math.floor(duration / 60)
     const durationMinutes = duration % 60
@@ -88,7 +88,7 @@ function timingToRamdan(timing) {
 
 export function breakCalculator(time) {
     let hours = Math.floor(time / 60)
-    let minutes = time % 60
+    let minutes = Math.round(time % 60)
     if (!hours && !minutes) return "Unknown Break Time"
 
     if (hours == 0) {
@@ -103,20 +103,23 @@ export function breakCalculator(time) {
     
 }
 
-/* ------------------------ */
-/* Main conversion function */
-/* ------------------------ */
+/* ----------------------------- */
+/* Main data extraction function */
+/* ----------------------------- */
 
 export function analyzeData(data) {
     const lines = data.split("\n")
     
     let finalStuff = []
-    
     let i = -1;
+    let course = "";
     for(let line of lines) {
-        let course = "";
-        if (/([A-Z]{4}\s[0-9]{4})/.test(line)) {
-            course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0]
+        if (/([A-Z]{4}\s[0-9]{4})/.test(line) || line.startsWith("LAB")) {
+            if (line.startsWith("LAB")) {
+                course = course.substring(0, course.length-5) + "- LAB"
+            } else {
+                course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0] + " - LEC"
+            }
             finalStuff.push({name: course})
             i++
         };
@@ -133,6 +136,15 @@ export function analyzeData(data) {
 
                 }  else {
                     finalStuff[i].timings = [line.match(/(?<=:\s)(.*)/)[0]]
+                }
+            }
+            if (/[0-9]{2}\.[0-9]\.[0-9]{2}/.test(line)) {
+                thisLoop:
+                for(let j = 0; j <  finalStuff[i].timings.length; j++) {
+                    if (finalStuff[i].timings[j].includes(" to ") || finalStuff[i].timings[j].includes("Between")) {
+                        finalStuff[i].timings[j] = [finalStuff[i].timings[j], line]
+                        break thisLoop
+                    }
                 }
             }
         }
@@ -163,3 +175,30 @@ export function analyzeInstructorData(data) {
     }
     return finalData
 }
+
+export function errorTimingToData(timing) {
+    if (timing.length < 40) return [0,0,timing.substring(0,7),timing.substring(11)]
+    let hours, minutes;
+    
+    if (timing.length > 46) {
+        hours = +timing.match(/.*(?=(hour))/ig)[0]
+        minutes = +timing.match(/(?<=(and)).*(?=(minute))/ig)[0]
+    } else {
+        hours = timing.includes("hour") ? +timing.match(/.*(?=(hour))/ig)[0] : false
+        minutes = timing.includes("minute") ? +timing.match(/.*(?=(minute))/ig)[0] : false
+    }
+
+    const duration = hours ? hours * 60 + (minutes ? minutes : 0) : minutes ? minutes : false
+
+    const estim1 = timing.substring(timing.length-19, timing.length-12)
+    const estim2 = timing.substring(timing.length-7, timing.length)
+
+    const estimatedAverage = addToTiming(estim1, Math.round((timingToNum(estim2)*60 - timingToNum(estim1)*60)/2))
+    const estimatedStartTime = timingToNum(estim2) - timingToNum(estimatedAverage)
+
+    const start = addToTiming(estimatedAverage, duration)
+
+    return [duration/60, estimatedStartTime, estimatedAverage, start]
+}
+
+console.log(analyzeData(studentDemoData))
