@@ -114,8 +114,8 @@ export function analyzeData(data) {
     let i = -1;
     let course = "";
     for(let line of lines) {
-        if (/([A-Z]{4}\s[0-9]{4})/.test(line) || line.startsWith("LAB")) {
-            if (line.startsWith("LAB") || line.startsWith("Laboratory")) {
+        if (/([A-Z]{4}\s[0-9]{4})/.test(line) || /LAB|Laboratory/.test(line)) {
+            if (/LAB|Laboratory/.test(line)) {
                 course = course.substring(0, course.length-5) + "- LAB"
             } else {
                 course = line.match(/([A-Z]{4}\s[0-9]{4})/)[0] + " - LEC"
