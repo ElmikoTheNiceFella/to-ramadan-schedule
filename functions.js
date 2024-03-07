@@ -88,7 +88,7 @@ function timingToRamdan(timing) {
 
 export function breakCalculator(time) {
     let hours = Math.floor(time / 60)
-    let minutes = time % 60
+    let minutes = Math.round(time % 60)
     if (!hours && !minutes) return "Unknown Break Time"
 
     if (hours == 0) {
@@ -111,7 +111,6 @@ export function analyzeData(data) {
     const lines = data.split("\n")
     
     let finalStuff = []
-    console.log(data)
     let i = -1;
     let course = "";
     for(let line of lines) {
@@ -140,10 +139,11 @@ export function analyzeData(data) {
                 }
             }
             if (/[0-9]{2}\.[0-9]\.[0-9]{2}/.test(line)) {
-                console.log("Found room number", finalStuff[i].timings)
+                thisLoop:
                 for(let j = 0; j <  finalStuff[i].timings.length; j++) {
                     if (finalStuff[i].timings[j].includes(" to ") || finalStuff[i].timings[j].includes("Between")) {
                         finalStuff[i].timings[j] = [finalStuff[i].timings[j], line]
+                        break thisLoop
                     }
                 }
             }
@@ -177,7 +177,7 @@ export function analyzeInstructorData(data) {
 }
 
 export function errorTimingToData(timing) {
-    if (timing.length < 40) return [0,0,0,timing.substring(11)]
+    if (timing.length < 40) return [0,0,timing.substring(0,7),timing.substring(11)]
     let hours, minutes;
     
     if (timing.length > 46) {
@@ -202,5 +202,3 @@ export function errorTimingToData(timing) {
 }
 
 console.log(analyzeData(studentDemoData))
-console.log("------------------------------------------------")
-console.log(analyzeInstructorData(instructorDemoData))
