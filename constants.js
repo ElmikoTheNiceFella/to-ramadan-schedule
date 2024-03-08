@@ -155,10 +155,10 @@ We 2:00PM - 3:30PM
 05.2.68
 Jan 2, 2024-
 Apr 18, 2024`
-export const studentDemoData = `Abd El Hakim Akhadkhou
+export const studentDemoData = `Shayma Mariey
 Winter 2024
 Credit
-COMM 1020 English Communication II
+DACS 2201 Intro to Data & Cyber Security
 Status
 Units
 Grading Basis
@@ -173,18 +173,49 @@ Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 1895 -Section 4
+Lecture - Class 2476 -Section 7
 02/01/2024 - 18/04/2024
  
-02/01/2024 - 18/04/2024
- 
-Days: Thursday
-Times: 9:30AM to 11:00AM
 Days: Sunday
-Times: 9:30AM to 11:00AM
-05.1.65
+Times: 10:00AM to 12:00PM
+01.2.05
  
-05.1.65
+ 
+Laboratory - Class 2478 -Section 9
+02/01/2024 - 18/04/2024
+ 
+02/01/2024 - 18/04/2024
+ 
+Days: Monday
+Times: 8:00AM to 9:30AM
+Days: Wednesday
+Times: 8:00AM to 9:30AM
+10.2.27
+ 
+10.2.27
+ 
+ 
+GARC 2002 Globalization & Environment
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+3.00
+60% and Letter Grade
+B.Sc. - IT
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Lecture - Class 2011 -Section 2
+02/01/2024 - 18/04/2024
+ 
+Days: Wednesday
+Times: 10:00AM to 1:00PM
+05.2.61
  
  
 INFS 1201 Computer Programming
@@ -202,60 +233,29 @@ Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 2575 -Section 1
+Lecture - Class 2593 -Section 19
 02/01/2024 - 18/04/2024
  
 02/01/2024 - 18/04/2024
  
 Days: Tuesday
-Times: 8:00AM to 9:30AM
+Times: 3:30PM to 5:00PM
 Days: Sunday
-Times: 8:00AM to 9:30AM
-01.2.08
+Times: 3:30PM to 5:00PM
+01.2.05
  
-01.2.08
+01.2.05
  
  
-Laboratory - Class 2576 -Section 2
+Laboratory - Class 2596 -Section 22
 02/01/2024 - 18/04/2024
  
-Days: Monday
-Times: 2:00PM to 5:00PM
-10.2.04
+Days: Thursday
+Times: 11:00AM to 2:00PM
+10.2.06
  
  
-INFT 1201 Computer Hardware
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-4.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2670 -Section 5
-02/01/2024 - 18/04/2024
- 
-Days: Wednesday
-Times: 2:00PM to 5:00PM
-10.1.13
- 
- 
-Laboratory - Class 2671 -Section 6
-02/01/2024 - 18/04/2024
- 
-Days: Monday
-Times: 9:30AM to 12:30PM
-10.1.13
- 
- 
-MATH 1020 Pre-Calculus
+MATH 1030 Calculus I
 Status
 Units
 Grading Basis
@@ -270,7 +270,7 @@ Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 2062 -Section 11
+Lecture - Class 2074 -Section 5
 02/01/2024 - 18/04/2024
  
 02/01/2024 - 18/04/2024
@@ -278,13 +278,11 @@ Lecture - Class 2062 -Section 11
 02/01/2024 - 18/04/2024
  
 Days: Tuesday
-Times: 2:00PM to 3:00PM
+Times: 8:00AM to 9:00AM
 Days: Thursday
-Times: 2:00PM to 3:00PM
+Times: 8:00AM to 9:00AM
 Days: Sunday
-Times: 2:00PM to 3:00PM
-12.2.37
- 
-05.1.56
- 
-05.2.37`
+Times: 8:00AM to 9:00AM
+05.2.54 
+05.2.54
+05.2.54`

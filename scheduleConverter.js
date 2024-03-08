@@ -97,7 +97,6 @@ export function extractScheduleInstructor(userData) {
     for(let day of Object.keys(days)) {
         days[day].sort((a,b) => a[1].length > 30 ? timingToNum(a[1].substring(a[1].length-19,a[1].length-12)) - timingToNum(b[1].substring(0,7)) : b[1].length > 30 ? timingToNum(a[1].substring(0,7)) - timingToNum(b[1].substring(b[1].length-19,b[1].length-12)) : timingToNum(a[1].substring(0,7)) - timingToNum(b[1].substring(0,7)))
     }
-    console.log(days)
     // Add Breaks
     for(let day of Object.keys(days)) { 
         const currentDay = days[day]
@@ -138,6 +137,4 @@ export function extractScheduleInstructor(userData) {
     return days
 }
 
-extractScheduleStudent(studentDemoData)
-console.log("------------------------")
-console.log(extractScheduleInstructor(instructorDemoData))
+console.log(extractScheduleStudent(studentDemoData))

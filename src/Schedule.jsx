@@ -3,10 +3,7 @@ import { timingToNum, errorTimingToData } from "../functions"
 const base = timingToNum("08:00AM")
 
 const Schedule = ({ data }) => {
-  // Generate a times array from 08:00AM to 07:00PM
-  const times = ["08:00AM", "09:00AM", "10:00AM", "11:00AM", "12:00PM", "01:00PM", "02:00PM", "03:00PM", "04:00PM", "05:00PM", "06:00PM", "07:00PM"]
-  if (data["Monday"].length !== 0)
-    console.log("ting", (timingToNum(data["Monday"][1][1].substring(0, 7)) - base) * 100)
+  
   return (
     <div style={{
       height: "1000px"
