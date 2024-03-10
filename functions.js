@@ -150,6 +150,12 @@ export function analyzeData(data) {
         }
     }
 
+    for(let item of finalStuff) {
+        if (!item.timings) {
+            finalStuff.splice(finalStuff.indexOf(item), 1)
+        }
+    }
+
     return finalStuff
 }
 
@@ -200,5 +206,3 @@ export function errorTimingToData(timing) {
 
     return [duration/60, estimatedStartTime, estimatedAverage, start]
 }
-
-console.log(analyzeData(studentDemoData))

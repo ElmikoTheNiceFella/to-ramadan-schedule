@@ -19,7 +19,7 @@ export function extractScheduleStudent(userData) {
 
     const data = analyzeData(userData)
     // Add days and timings to days object
-    
+    console.log(data)
     for(let course of data) {
         for(let i = 0; i < course.timings.length; i += 2) {
             if (course.timings[i+1][0].length <= 30) {
