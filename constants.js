@@ -155,134 +155,72 @@ We 2:00PM - 3:30PM
 05.2.68
 Jan 2, 2024-
 Apr 18, 2024`
-export const studentDemoData = `Shayma Mariey
+export const studentDemoData = `Print Jassim Abuhaliqa
 Winter 2024
 Credit
-DACS 2201 Intro to Data & Cyber Security
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-3.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2476 -Section 7
+FL 1140 Academic English IV
+LEC - Class 1764 -Section 6
 02/01/2024 - 18/04/2024
- 
-Days: Sunday
-Times: 10:00AM to 12:00PM
-01.2.05
- 
- 
-Laboratory - Class 2478 -Section 9
 02/01/2024 - 18/04/2024
- 
 02/01/2024 - 18/04/2024
- 
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
 Days: Monday
-Times: 8:00AM to 9:30AM
-Days: Wednesday
-Times: 8:00AM to 9:30AM
-10.2.27
- 
-10.2.27
- 
- 
-GARC 2002 Globalization & Environment
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-3.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2011 -Section 2
-02/01/2024 - 18/04/2024
- 
-Days: Wednesday
-Times: 10:00AM to 1:00PM
-05.2.61
- 
- 
-INFS 1201 Computer Programming
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-4.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2593 -Section 19
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
+Times: 14:00 to 15:30
+Days: Monday
+Times: 15:30 to 18:30
 Days: Tuesday
-Times: 3:30PM to 5:00PM
-Days: Sunday
-Times: 3:30PM to 5:00PM
-01.2.05
- 
-01.2.05
- 
- 
-Laboratory - Class 2596 -Section 22
-02/01/2024 - 18/04/2024
- 
-Days: Thursday
-Times: 11:00AM to 2:00PM
-10.2.06
- 
- 
-MATH 1030 Calculus I
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-3.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2074 -Section 5
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
+Times: 13:00 to 15:00
 Days: Tuesday
-Times: 8:00AM to 9:00AM
+Times: 15:00 to 16:00
+Days: Wednesday
+Times: 14:00 to 15:00
+Days: Wednesday
+Times: 15:30 to 18:30
 Days: Thursday
-Times: 8:00AM to 9:00AM
+Times: 12:00 to 14:00
+Days: Thursday
+Times: 14:00 to 15:30
 Days: Sunday
-Times: 8:00AM to 9:00AM
-05.2.54 
-05.2.54
-05.2.54`
+Times: 13:00 to 15:00
+Days: Sunday
+Times: 15:00 to 16:00
+05.2.24
+05.2.68
+05.2.43
+05.1.59
+05.1.59
+05.2.68
+05.2.43
+05.1.59
+05.2.43
+05.1.59
+MA 1029 Preparatory Mathematics
+LEC - Class 1800 -Section 5
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+02/01/2024 - 18/04/2024
+Days: Tuesday
+Times: 17:00 to 19:00
+Days: Thursday
+Times: 17:00 to 19:00
+Days: Sunday
+Times: 17:00 to 19:00
+05.2.25
+05.2.25
+05.2.25
+Status Units Grading Basis Academic Program Requirement Designation
+Class Start/End Dates Days and Times Room
+Status Units Grading Basis Academic Program Requirement Designation
+Class Start/End Dates Days and Times Room
+Enrolled 70% and Letter Grade Foundation Program
+Enrolled 60% and Letter Grade Foundation Program
+https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/c/T_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 10/03/2024, 12:31 PM
+Page 1 of 2
+https://campus.udst.edu.qa/psc/csqaprd9/EMPLOYEE/SA/c/T_FL.SSR_COMPONENT_FL.GBL?Page=SSR_VW_CLASS_FL 10/03/2024, 12:31 PM
+Page 2 of 2`
