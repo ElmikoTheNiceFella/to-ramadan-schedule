@@ -15,6 +15,7 @@ export const ramadanStarts = {
   "11:00AM": "10:15AM",
   "11:30AM": "10:35AM",
   "12:00PM": "11:00AM",
+  "12:30PM": "11:20AM",
   "01:00PM": "12:00PM",
   "02:00PM": "12:45PM",
   "03:00PM": "01:30PM",
@@ -155,10 +156,35 @@ We 2:00PM - 3:30PM
 05.2.68
 Jan 2, 2024-
 Apr 18, 2024`
-export const studentDemoData = `Shayma Mariey
+export const studentDemoData = `Alaa Qassas
 Winter 2024
 Credit
-DACS 2201 Intro to Data & Cyber Security
+AECH 1201 Basic Engineering Calculations
+
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+1.00
+60% and Letter Grade
+B.Sc. - Engineering
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Laboratory - Class 1328 -Section 3
+02/01/2024 - 18/04/2024
+ 
+Days: Wednesday
+Times: 5:00PM to 8:00PM
+08.1.02
+ 
+ 
+AEEL 1101 Fundamentals of Electricity I
+
 Status
 Units
 Grading Basis
@@ -167,35 +193,132 @@ Requirement Designation
 Enrolled
 3.00
 60% and Letter Grade
-B.Sc. - IT
+B.Sc. - Engineering
  
 Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 2476 -Section 7
+Lecture - Class 1413 -Section 1
 02/01/2024 - 18/04/2024
  
+02/01/2024 - 18/04/2024
+ 
+02/01/2024 - 18/04/2024
+ 
+Days: Tuesday
+Times: 12:00PM to 1:00PM
+Days: Thursday
+Times: 12:00PM to 1:00PM
+Days: Sunday
+Times: 12:00PM to 1:00PM
+12.2.36
+ 
+12.2.36
+ 
+12.2.36
+ 
+ 
+AEEL 1201 Fundam of Electricity I (Lab)
+
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+1.00
+60% and Letter Grade
+B.Sc. - Engineering
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Laboratory - Class 1442 -Section 7
+02/01/2024 - 18/04/2024
+ 
+Days: Wednesday
+Times: 8:00AM to 10:00AM
+09.2.63
+ 
+ 
+COMM 1010 English Communication I
+
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+3.00
+60% and Letter Grade
+B.Sc. - Engineering
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Lecture - Class 1870 -Section 6
+02/01/2024 - 18/04/2024
+ 
+02/01/2024 - 18/04/2024
+ 
+Days: Tuesday
+Times: 10:00AM to 11:00AM
 Days: Sunday
 Times: 10:00AM to 12:00PM
-01.2.05
+05.1.65
+ 
+10.2.01
  
  
-Laboratory - Class 2478 -Section 9
+MATH 1010 Algebra & Trigonometry
+
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+3.00
+60% and Letter Grade
+B.Sc. - Engineering
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Lecture - Class 2036 -Section 19
 02/01/2024 - 18/04/2024
  
+02/01/2024 - 18/04/2024
+ 
+02/01/2024 - 18/04/2024
+ 
+Days: Tuesday
+Times: 9:00AM to 10:00AM
+Days: Thursday
+Times: 9:00AM to 10:00AM
+Days: Sunday
+Times: 9:00AM to 10:00AM
+05.1.66
+ 
+05.1.66
+ 
+05.1.66
+ 
+ 
+Laboratory - Class 2037 -Section 20
 02/01/2024 - 18/04/2024
  
 Days: Monday
-Times: 8:00AM to 9:30AM
-Days: Wednesday
-Times: 8:00AM to 9:30AM
-10.2.27
- 
-10.2.27
+Times: 2:00PM to 3:00PM
+05.1.58
  
  
-GARC 2002 Globalization & Environment
+PHYS 1020 General Physics
+
 Status
 Units
 Grading Basis
@@ -204,73 +327,13 @@ Requirement Designation
 Enrolled
 3.00
 60% and Letter Grade
-B.Sc. - IT
+B.Sc. - Engineering
  
 Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 2011 -Section 2
-02/01/2024 - 18/04/2024
- 
-Days: Wednesday
-Times: 10:00AM to 1:00PM
-05.2.61
- 
- 
-INFS 1201 Computer Programming
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-4.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2593 -Section 19
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
-Days: Tuesday
-Times: 3:30PM to 5:00PM
-Days: Sunday
-Times: 3:30PM to 5:00PM
-01.2.05
- 
-01.2.05
- 
- 
-Laboratory - Class 2596 -Section 22
-02/01/2024 - 18/04/2024
- 
-Days: Thursday
-Times: 11:00AM to 2:00PM
-10.2.06
- 
- 
-MATH 1030 Calculus I
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-3.00
-60% and Letter Grade
-B.Sc. - IT
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2074 -Section 5
+Lecture - Class 2138 -Section 4
 02/01/2024 - 18/04/2024
  
 02/01/2024 - 18/04/2024
@@ -278,11 +341,37 @@ Lecture - Class 2074 -Section 5
 02/01/2024 - 18/04/2024
  
 Days: Tuesday
-Times: 8:00AM to 9:00AM
+Times: 2:00PM to 3:00PM
 Days: Thursday
-Times: 8:00AM to 9:00AM
+Times: 2:00PM to 3:00PM
 Days: Sunday
-Times: 8:00AM to 9:00AM
-05.2.54 
-05.2.54
-05.2.54`
+Times: 2:00PM to 3:00PM
+05.1.15
+ 
+05.1.15
+ 
+05.1.15
+ 
+ 
+PHYS 1021 General Physics (Lab)
+
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+1.00
+60% and Letter Grade
+B.Sc. - Engineering
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Laboratory - Class 2144 -Section 2
+02/01/2024 - 18/04/2024
+ 
+Days: Sunday
+Times: 5:00PM to 8:00PM
+05.1.06`
