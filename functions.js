@@ -206,10 +206,6 @@ export function errorTimingToData(timing) {
     const start = addToTiming(estimatedAverage, duration)
 
     return [duration/60, estimatedStartTime, estimatedAverage, start]
-<<<<<<< HEAD
 }
 
 console.log(analyzeInstructorData(instructorDemoData))
-=======
-}
->>>>>>> 232547b0602b617604520f06d876c5a7cc924a03
