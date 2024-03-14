@@ -162,7 +162,7 @@ export function analyzeInstructorData(data) {
         const line = lines[i]
 
         if (/[A-Z]{4}\s[0-9]{4}/.test(line)) {
-            if (courseName) finalData[courseName] = courseData
+            console.log(line)
             courseName = line.match(/([A-Z]{4}\s[0-9]{4}\-[0-9]{0,2})/)[0]
             courseData = []
         }
@@ -171,6 +171,7 @@ export function analyzeInstructorData(data) {
             const timing = timingToRamdan(line.substring(3, line.length))
             const roomNumber = lines[i+1]
             courseData.push([day, timing, roomNumber])
+            if (courseName) finalData[courseName] = courseData
         }
     }
     return finalData
@@ -201,4 +202,4 @@ export function errorTimingToData(timing) {
     return [duration/60, estimatedStartTime, estimatedAverage, start]
 }
 
-console.log(analyzeData(studentDemoData))
+console.log(analyzeInstructorData(instructorDemoData))

@@ -38,7 +38,7 @@ function App() {
       height: tutorial ? "100dvh" :"auto",
       overflowY: "hidden"
     }} id="parent">
-      {tutorial && <Steps exit={handleSteps} />}
+      {tutorial && <Steps exit={handleSteps} isInstructor={!isStudent} />}
       <h1>Enter Your Ramadan Schedule</h1>
       <div className="type">
         <input type="radio" checked={isStudent} onChange={() => setIsStudent(p => !p)} name="student-instructor" id="student" />

@@ -137,4 +137,4 @@ export function extractScheduleInstructor(userData) {
     return days
 }
 
-console.log(extractScheduleStudent(studentDemoData))
+console.log(extractScheduleInstructor(instructorDemoData))
