@@ -138,12 +138,11 @@ export function analyzeData(data) {
                     finalStuff[i].timings = [line.match(/(?<=:\s)(.*)/)[0]]
                 }
             }
-            if (/[0-9]{2}\.[0-9]\.[0-9]{2}/.test(line)) {
-                thisLoop:
+            if (/[0-9]{2}\.[0-9]\.[0-9]{2,3}/.test(line)) {
                 for(let j = 0; j <  finalStuff[i].timings.length; j++) {
                     if (finalStuff[i].timings[j].includes(" to ") || finalStuff[i].timings[j].includes("Between")) {
                         finalStuff[i].timings[j] = [finalStuff[i].timings[j], line]
-                        break thisLoop
+                        break
                     }
                 }
             }
@@ -167,9 +166,9 @@ export function analyzeInstructorData(data) {
     for(let i = 0; i < lines.length; i++) {
         const line = lines[i]
 
-        if (/[A-Z]{4}\s[0-9]{4}/.test(line)) {
+        if (/[A-Z]{2,4}\s[0-9]{4}/.test(line)) {
             console.log(line)
-            courseName = line.match(/([A-Z]{4}\s[0-9]{4}\-[0-9]{0,2})/)[0]
+            courseName = line.match(/([A-Z]{2,4}\s[0-9]{4}\-[0-9]{0,2})/)[0]
             courseData = []
         }
         if (Object.keys(fullDays).includes(line.substring(0, 2))) {
