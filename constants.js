@@ -156,35 +156,12 @@ We 2:00PM - 3:30PM
 05.2.68
 Jan 2, 2024-
 Apr 18, 2024`
-export const studentDemoData = `Alaa Qassas
-Winter 2024
+export const studentDemoData = `Press Control+M to start dragging object
+Print
+Faisal Mabrouk
+Winter 2025
 Credit
-AECH 1201 Basic Engineering Calculations
-
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-1.00
-60% and Letter Grade
-B.Sc. - Engineering
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Laboratory - Class 1328 -Section 3
-02/01/2024 - 18/04/2024
- 
-Days: Wednesday
-Times: 5:00PM to 8:00PM
-08.1.02
- 
- 
-AEEL 1101 Fundamentals of Electricity I
-
+COMM 1020 English Communication II
 Status
 Units
 Grading Basis
@@ -193,58 +170,29 @@ Requirement Designation
 Enrolled
 3.00
 60% and Letter Grade
-B.Sc. - Engineering
+B.Sc. - IT
  
 Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 1413 -Section 1
-02/01/2024 - 18/04/2024
+LecTheatre - Class 2132 -Section 1
+31/12/2024 - 15/04/2025
  
-02/01/2024 - 18/04/2024
+Days: Sunday
+Times: 4:00PM to 5:00PM
+01.1.04
  
-02/01/2024 - 18/04/2024
+ 
+Lecture - Class 2134 -Section 3
+31/12/2024 - 15/04/2025
  
 Days: Tuesday
-Times: 12:00PM to 1:00PM
-Days: Thursday
-Times: 12:00PM to 1:00PM
-Days: Sunday
-Times: 12:00PM to 1:00PM
-12.2.36
- 
-12.2.36
- 
-12.2.36
+Times: 2:00PM to 4:00PM
+05.1.59
  
  
-AEEL 1201 Fundam of Electricity I (Lab)
-
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-1.00
-60% and Letter Grade
-B.Sc. - Engineering
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Laboratory - Class 1442 -Section 7
-02/01/2024 - 18/04/2024
- 
-Days: Wednesday
-Times: 8:00AM to 10:00AM
-09.2.63
- 
- 
-COMM 1010 English Communication I
-
+COMP 4201 Capstone Project
 Status
 Units
 Grading Basis
@@ -253,72 +201,33 @@ Requirement Designation
 Enrolled
 3.00
 60% and Letter Grade
-B.Sc. - Engineering
+B.Sc. - IT
  
 Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 1870 -Section 6
-02/01/2024 - 18/04/2024
+Laboratory - Class 2812 -Section 11
+31/12/2024 - 15/04/2025
  
-02/01/2024 - 18/04/2024
+31/12/2024 - 15/04/2025
  
-Days: Tuesday
-Times: 10:00AM to 11:00AM
-Days: Sunday
-Times: 10:00AM to 12:00PM
-05.1.65
- 
-10.2.01
- 
- 
-MATH 1010 Algebra & Trigonometry
-
-Status
-Units
-Grading Basis
-Academic Program
-Requirement Designation
-Enrolled
-3.00
-60% and Letter Grade
-B.Sc. - Engineering
- 
-Class
-Start/End Dates
-Days and Times
-Room
-Lecture - Class 2036 -Section 19
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
-Days: Tuesday
-Times: 9:00AM to 10:00AM
-Days: Thursday
-Times: 9:00AM to 10:00AM
-Days: Sunday
-Times: 9:00AM to 10:00AM
-05.1.66
- 
-05.1.66
- 
-05.1.66
- 
- 
-Laboratory - Class 2037 -Section 20
-02/01/2024 - 18/04/2024
+31/12/2024 - 15/04/2025
  
 Days: Monday
-Times: 2:00PM to 3:00PM
-05.1.58
+Times: 12:00PM to 1:00PM
+Days: Wednesday
+Times: 8:00AM to 10:00AM
+Days: Sunday
+Times: 8:00AM to 11:00AM
+OFFS
+ 
+OFFS
+ 
+OFFS
  
  
-PHYS 1020 General Physics
-
+DACS 4202 Penetration Testing
 Status
 Units
 Grading Basis
@@ -327,51 +236,116 @@ Requirement Designation
 Enrolled
 3.00
 60% and Letter Grade
-B.Sc. - Engineering
+B.Sc. - IT
  
 Class
 Start/End Dates
 Days and Times
 Room
-Lecture - Class 2138 -Section 4
-02/01/2024 - 18/04/2024
+Lecture - Class 2891 -Section 5
+31/12/2024 - 15/04/2025
  
-02/01/2024 - 18/04/2024
- 
-02/01/2024 - 18/04/2024
- 
-Days: Tuesday
-Times: 2:00PM to 3:00PM
-Days: Thursday
-Times: 2:00PM to 3:00PM
-Days: Sunday
-Times: 2:00PM to 3:00PM
-05.1.15
- 
-05.1.15
- 
-05.1.15
+Days: Wednesday
+Times: 2:00PM to 4:00PM
+10.2.27
  
  
-PHYS 1021 General Physics (Lab)
-
+Laboratory - Class 2892 -Section 6
+31/12/2024 - 15/04/2025
+ 
+Days: Monday
+Times: 2:00PM to 5:00PM
+10.2.04
+ 
+ 
+DACS 4205 Digital Forensics
 Status
 Units
 Grading Basis
 Academic Program
 Requirement Designation
 Enrolled
-1.00
+3.00
 60% and Letter Grade
-B.Sc. - Engineering
+B.Sc. - IT
  
 Class
 Start/End Dates
 Days and Times
 Room
-Laboratory - Class 2144 -Section 2
-02/01/2024 - 18/04/2024
+Lecture - Class 2895 -Section 3
+31/12/2024 - 15/04/2025
+ 
+Days: Wednesday
+Times: 4:00PM to 6:00PM
+10.2.16
+ 
+ 
+Laboratory - Class 2896 -Section 4
+31/12/2024 - 15/04/2025
  
 Days: Sunday
 Times: 5:00PM to 8:00PM
-05.1.06`
+10.2.16
+ 
+ 
+DACS 4206 Sec Monitor & Incident Res
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+3.00
+60% and Letter Grade
+B.Sc. - IT
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+Lecture - Class 2899 -Section 3
+31/12/2024 - 15/04/2025
+ 
+Days: Tuesday
+Times: 12:00PM to 2:00PM
+10.1.18
+ 
+ 
+Laboratory - Class 2900 -Section 4
+31/12/2024 - 15/04/2025
+ 
+Days: Thursday
+Times: 11:00AM to 2:00PM
+10.1.18
+ 
+ 
+SSHA 1001 Islamic & Arab Civilization
+Status
+Units
+Grading Basis
+Academic Program
+Requirement Designation
+Enrolled
+3.00
+60% and Letter Grade
+B.Sc. - IT
+ 
+Class
+Start/End Dates
+Days and Times
+Room
+LecTheatre - Class 2504 -Section 1
+31/12/2024 - 15/04/2025
+ 
+Days: Monday
+Times: 9:30AM to 11:00AM
+01.2.08
+ 
+ 
+Lecture - Class 2505 -Section 2
+31/12/2024 - 15/04/2025
+ 
+Days: Sunday
+Times: 12:30PM to 2:00PM
+05.2.37`

@@ -138,7 +138,7 @@ export function analyzeData(data) {
                     finalStuff[i].timings = [line.match(/(?<=:\s)(.*)/)[0]]
                 }
             }
-            if (/[0-9]{2}\.[0-9]\.[0-9]{2,3}/.test(line)) {
+            if (/[0-9]{2}\.[0-9]\.[0-9]{2,3}/.test(line) || line.includes("OFFS")) {
                 for(let j = 0; j <  finalStuff[i].timings.length; j++) {
                     if (finalStuff[i].timings[j].includes(" to ") || finalStuff[i].timings[j].includes("Between")) {
                         finalStuff[i].timings[j] = [finalStuff[i].timings[j], line]
@@ -208,3 +208,4 @@ export function errorTimingToData(timing) {
 }
 
 console.log(analyzeInstructorData(instructorDemoData))
+console.log(analyzeData(studentDemoData))
