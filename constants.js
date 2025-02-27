@@ -34,12 +34,12 @@ export const ramadanStarts = {
 }
 
 export const fullDays = {
-    "Su": "Sunday",
-    "Mo": "Monday",
-    "Tu": "Tuesday",
-    "We": "Wednesday",
-    "Th": "Thursday",
-    "Sa": "Saturday"
+  "Su": "Sunday",
+  "Mo": "Monday",
+  "Tu": "Tuesday",
+  "We": "Wednesday",
+  "Th": "Thursday",
+  "Sa": "Saturday"
 }
 
 // Demo data - TESTING PURPOSES ONLY
