@@ -40,7 +40,7 @@ function App() {
     }} id="parent">
       {tutorial && <Steps exit={handleSteps} isInstructor={!isStudent} />}
       <h1>Enter Your Ramadan Schedule</h1>
-      <p style={{ textAlign: "center", marginBottom: "32px", padding: "0px 24px" }} >Don't forget to donate and/or make duaa for our brothers and sisters that are facing hardships during this holy month in Palestine, Sudan or wherever they are.</p>
+      <p style={{ textAlign: "center", marginBottom: "32px", padding: "0px 24px" }} >Don't forget to donate and/or make du'a for our brothers and sisters who are facing hardships during this holy month in Palestine, Sudan, or wherever they may be.</p>
       <div className="type">
         <input type="radio" checked={isStudent} onChange={() => setIsStudent(p => !p)} name="student-instructor" id="student" />
         <label htmlFor="student">Student</label>
