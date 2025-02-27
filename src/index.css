@@ -110,7 +110,7 @@ button:active {
 }
 h1 {
   text-align: center;
-  padding: 48px 0px;
+  padding: 48px 0px 24px 0px;
   width: 70%;
   margin: auto;
 }
