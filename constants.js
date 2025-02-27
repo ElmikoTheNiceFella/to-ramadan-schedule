@@ -12,17 +12,21 @@ export const ramadanStarts = {
   "09:00AM": "08:45AM",
   "09:30AM": "09:05AM",
   "10:00AM": "09:30AM",
+  "10:30AM": "09:50AM",
   "11:00AM": "10:15AM",
   "11:30AM": "10:35AM",
   "12:00PM": "11:00AM",
   "12:30PM": "11:20AM",
   "01:00PM": "12:00PM",
+  "01:30PM": "12:20PM",
   "02:00PM": "12:45PM",
+  "02:30PM": "01:05PM",
   "03:00PM": "01:30PM",
   "03:30PM": "01:50PM",
   "04:00PM": "02:15PM",
   "04:30PM": "02:35PM",
   "05:00PM": "03:00PM",
+  "05:30PM": "03:20PM",
   "06:00PM": "03:45PM",
   "06:30PM": "04:05PM",
   "07:00PM": "04:30PM"
@@ -37,7 +41,7 @@ export const fullDays = {
     "Sa": "Saturday"
 }
 
-// Demo data
+// Demo data - TESTING PURPOSES ONLY
 export const instructorDemoData = `
 My Teaching Schedule > Winter 2024 > University of Doha
 My Teaching Schedule > Winter 2024 > University of Doha     Personalize | Zoom My Teaching Schedule > Winter 2024 > University of Doha |          First Show previous row (inactive button) (Alt+,) 1-12 of 12 Show next row (inactive button) (Alt+.) Last
