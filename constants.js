@@ -163,7 +163,7 @@ Jan 2, 2024-
 Apr 18, 2024`
 export const studentDemoData = `Press Control+M to start dragging object
 Print
-Faisal Mabrouk
+UDST Student
 Winter 2025
 Credit
 COMM 1020 English Communication II

@@ -3,6 +3,7 @@ import { extractScheduleStudent, extractScheduleInstructor } from "../scheduleCo
 import ReactToPrint from "react-to-print"
 import Schedule from "./Schedule"
 import Steps from "./Steps"
+import { studentDemoData } from "../constants"
 
 function App() {
 
@@ -33,6 +34,10 @@ function App() {
 
   const handleSteps = () => setTutorial(t => !t)
 
+  const handleDemoData = () => {
+    if (isStudent) setVal(studentDemoData)
+  }
+
   return (
     <div style={{
       height: tutorial ? "100dvh" :"auto",
@@ -50,6 +55,7 @@ function App() {
       <div className="input-holder">
         <textarea placeholder="Paste your schedule here..." value={val} onChange={e => setVal(e.target.value)}></textarea>
         <button onClick={handleSteps}>Tutorial</button>
+        <button onClick={handleDemoData}>Demo data (for recruiters)</button>
         <button onClick={handleClick}>Generate</button>
         {canDownload &&
           <ReactToPrint
