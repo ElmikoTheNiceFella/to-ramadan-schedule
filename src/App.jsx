@@ -3,7 +3,7 @@ import { extractScheduleStudent, extractScheduleInstructor } from "../scheduleCo
 import ReactToPrint from "react-to-print"
 import Schedule from "./Schedule"
 import Steps from "./Steps"
-import { studentDemoData } from "../constants"
+import { instructorDemoData, studentDemoData } from "../constants"
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
   const handleSteps = () => setTutorial(t => !t)
 
   const handleDemoData = () => {
-    if (isStudent) setVal(studentDemoData)
+    setVal(isStudent ? studentDemoData : instructorDemoData)
   }
 
   return (
